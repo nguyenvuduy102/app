@@ -13,8 +13,8 @@ import json
 import re
 
 # Lấy đường dẫn tuyệt đối đến file .env
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-load_dotenv(dotenv_path, override=True)
+# dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+# load_dotenv(dotenv_path, override=True)
 
 # Lấy API Key
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
