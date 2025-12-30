@@ -1,0 +1,13 @@
+Flask
+Flask-SQLAlchemy
+Flask-Login
+Flask-Cors
+Flask-Mail
+Flask-Admin
+PyMySQL
+cloudinary
+google-generativeai
+python-dotenv
+gunicorn
+requests
+Pillow
