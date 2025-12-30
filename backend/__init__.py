@@ -16,6 +16,11 @@ app = Flask(__name__)
 
 app.secret_key = 'aheafgwagfsadgasfsdfa2673^^8y8621'
 
+
+# --- THÊM ĐOẠN NÀY ĐỂ FIX LỖI COOKIE ---
+app.config['SESSION_COOKIE_SAMESITE'] = 'None'  # Cho phép cookie chéo domain
+app.config['SESSION_COOKIE_SECURE'] = True
+
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("SQLALCHEMY_DATABASE_URI", "mysql+pymysql://root:@localhost/db_shop?charset=utf8mb4")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 # THÊM ĐOẠN NÀY: Ép PyMySQL dùng utf8mb4 ngay khi kết nối
@@ -38,6 +43,8 @@ app.config['MAIL_DEFAULT_SENDER'] = 'duyn26353@gmail.com'
 CORS(app, 
      resources={r"/*": {"origins": "*"}},
      supports_credentials=True)
+
+
 
 mail = Mail(app)
 db = SQLAlchemy(app=app)
