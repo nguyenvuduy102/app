@@ -1486,6 +1486,22 @@ const getLocation = (onSuccess, onError) => {
         } catch { alert("Lỗi đổi quà"); }
     };
 
+    // Thêm đoạn này vào bên trong ChallengeUI, 
+// đặt nó bên dưới các hàm khác như handleRedeem, và TRƯỚC dòng "return ("
+
+    const startNavigation = (quest) => {
+        getLocation((coords) => {
+            // Lấy vị trí thành công -> Chuyển sang chế độ dẫn đường
+            setNavigatingQuest({ 
+                ...quest, 
+                userLat: coords.lat, 
+                userLon: coords.lon 
+            });
+        }, () => {
+            alert("Vui lòng bật định vị để sử dụng tính năng chỉ đường.");
+        });
+    };
+
     return (
         <div className="fade-in">
             <div className="hero-header challenge-mode">
