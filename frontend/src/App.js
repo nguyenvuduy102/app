@@ -254,7 +254,7 @@ const getSmartShopImage = (shop) => {
 
 // --- CẤU HÌNH API ---
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://app-qik6.onrender.com";
 
 // --- FIX LỖI ICON MARKER TRONG REACT LEAFLET ---
 delete L.Icon.Default.prototype._getIconUrl;
